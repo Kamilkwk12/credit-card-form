@@ -41,70 +41,77 @@ header{
     width: 375px;
     height: 280px;
     top: 0;
-    font-size: 0;
+    /* font-size: 0; */
 }
-
-.card{
+#front, #back{
     position: relative;
-    width: 285px;
-    height: auto;
+    width: fit-content;
+    height: fit-content;
 }
 
-.back-position{
-    top: 20px;
-    left: 75px;
+#back{
+    top: 25px;
+    left: 70px;
 }
 
-.front-position{
-    top: -69px; 
-    left: 15px;
+#front{
+    bottom: 46px;
+    left: 25px;
 }
 
-/* ON-CARD INFO */
 #card-container span{
     display: block;
     width: fit-content;
-    position: relative;
+    position: absolute;
     color: white;
     font-family: Space-Grotesk;
     user-select: none;
     z-index: 1;
 }
-#cvv-on-card{ 
+
+img{
+    width: 280px;
+    height: auto;
+}
+
+
+#cvv-on-card{
     font-weight: 600;
-    bottom: 70px;
-    left: 290px;
     font-size: 17px;
+    top: 65px;
+    left: 213px;
 }
 
 #card-number-on-card{
-    bottom: 137px;
-    left: 35px;
     font-weight: 600;
     font-size: 21.5px;
+    top: 84px;
+    left: 20px;
 }
 
 #name-on-card{
-    bottom: 132px;
-    left: 35px;
+    top: 122px;
+    left: 20px;
     font-weight: 400;
     font-size: 13px;
 }
 
 #date-on-card{
-    bottom: 149px;
-    left: 235px;
+    top: 122px;
+    left: 219px;
     font-weight: 400;
     font-size: 13px;
 }
 
-#card-container svg{
+svg{
     display: block;
     position: absolute;
-    top: 120px;
-    left: 28px;
+    top: 10px;
+    left: 10px;
     scale: 80%;
 }
+
+
 main{
     display: flex;
     justify-content: center;
@@ -181,6 +188,21 @@ input:focus{
     border-radius: 8px;
 }
 
-@media only screen and (min-width: 700px){
+@media only screen and (min-width: 1000px){
     
+    body{
+        display: flex;
+    }
+
+    header{
+        width: 483px;
+        height: 100vh;
+        background-image: url(./assets/images/bg-main-desktop.png);
+    }
+
+    main{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
 }
