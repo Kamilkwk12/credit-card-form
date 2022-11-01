@@ -5,6 +5,7 @@
 
 :root{
     --dark-violet: rgb(33, 9, 47);
+    --violet: rgb(101, 0, 196);
     --light-grayish-violet: rgb(222, 221, 223);
     --dark-grayish-violet: rgb(142, 133, 147);
 }
@@ -72,6 +73,8 @@ header{
 img{
     width: 280px;
     height: auto;
+    box-shadow: 0 0 10px rgba(51, 51, 51, 0.3);
+    border-radius: 10px;
 }
 
 
@@ -103,7 +106,7 @@ img{
     font-size: 13px;
 }
 
-svg{
+#front svg{
     display: block;
     position: absolute;
     top: 10px;
@@ -123,13 +126,13 @@ main{
 form{
     display: flex;
     flex-flow: column wrap;
-    width: 375px;
+    width: 500px;
     height: 400px;
 }
 
 form div{
     width: fit-content;
-    height: 70px;
+    height: fit-content;
     margin: 0 auto 10px auto;
 }
 
@@ -157,13 +160,19 @@ input{
 
 input::placeholder{
     font-family: Space-Grotesk;
-    color: rgba(142, 133, 147, 0.5);
+    color: rgba(142, 133, 147, 0.7);
     font-size: 16px;
 }
 
 input:focus{
     outline: none;
-    border-color: var(--dark-violet);
+    border-color: var(--violet);
+}
+
+.error{
+    font-family: Space-Grotesk;
+    color: red;
+    font-size: 13px;
 }
 
 #expiration-month, #expiration-year {
@@ -175,7 +184,7 @@ input:focus{
     margin-left: 8px;
 }
 
-#confirm{
+.button{
     width: 320px;
     height: 45px;
     margin: 10px auto 10px auto;
@@ -186,23 +195,187 @@ input:focus{
     font-size: 17px;
     font-weight: 500;
     border-radius: 8px;
+    transition: 0.5s;
 }
 
-@media only screen and (min-width: 1000px){
+.button:hover{
+    background-color: rgb(74, 22, 104);
+}
+
+.button:active{
+    background-color: rgb(25, 7, 36);
+}
+
+@media only screen and (min-width: 750px){
+    header{
+        height: 300px;
+    }
+
+    main{
+        display: flex;
+        justify-content: center;
+        height: auto;
+        margin-top: 90px;
+    }
+
+    img{
+        width: 340px;
+        height: auto;
+    }
+
+    #back{
+        top: 7vh;
+        left: 11vw;
+    }
     
+    #front{
+        bottom: 2vh;
+        left: -8vw;
+    }
+
+
+    #cvv-on-card{
+        font-weight: 600;
+        font-size: 18px;
+        top: 81px;
+        left: 265px;
+    }
+    
+    #card-number-on-card{
+        font-weight: 500;
+        font-size: 26.5px;
+        top: 105px;
+        left: 19px;
+    }
+    
+    #name-on-card{
+        top: 150px;
+        left: 20px;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    
+    #date-on-card{
+        top: 150px;
+        left: 272px;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    
+}
+
+@media only screen and (min-width: 1200px){
+
     body{
         display: flex;
     }
 
     header{
-        width: 483px;
+        width: 700px;
         height: 100vh;
         background-image: url(./assets/images/bg-main-desktop.png);
     }
 
     main{
+        margin: 0;
         width: 100%;
         justify-content: center;
         align-items: center;
     }
+
+    img{
+        width: 380px;
+        height: auto;
+    }
+
+    #back{
+        top: 40vh;
+        left: 11vw;
+    }
+    
+    #front{
+        bottom: 40vh;
+        left: 4vw;
+    }
+
+    #flex-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #card-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        position: absolute;
+        width: 470px;
+        height: 100vh;
+        left:6vw;
+    }
+
+    #cvv-on-card{
+        font-weight: 600;
+        font-size: 18px;
+        top: 91px;
+        left: 294px;
+    }
+    
+    #card-number-on-card{
+        font-weight: 500;
+        font-size: 30px;
+        top: 110px;
+        left: 20px;
+    }
+    
+    #name-on-card{
+        top: 163px;
+        left: 20px;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    
+    #date-on-card{
+        top: 163px;
+        left: 309px;
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+    #confirmation{
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* confirmation page */
+#confirmation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#confirmation svg{
+    margin: 10px 0 15px 0;
+}
+
+#thanks{
+    font-family: Space-Grotesk;
+    color: var(--dark-violet);
+    letter-spacing: 4px;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+#info{
+    font-family: Space-Grotesk;
+    color: var(--dark-grayish-violet);
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 30px;
 }
