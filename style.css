@@ -1,6 +1,7 @@
 * { 
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 :root{
@@ -97,6 +98,7 @@ img{
     left: 20px;
     font-weight: 400;
     font-size: 13px;
+    text-transform: uppercase;
 }
 
 #date-on-card{
@@ -147,6 +149,7 @@ label{
 input{
     color:var(--dark-violet);
     font-size: 16px;
+    font-family: Space-Grotesk;
     width: 305px;
     height: 40px;
     margin-top: 7px;
@@ -156,23 +159,34 @@ input{
     border-width: 1px;
     border-radius: 8px;
     transition: 0.5s;
+    /* text-transform: uppercase; */
 }
+
 
 input::placeholder{
     font-family: Space-Grotesk;
     color: rgba(142, 133, 147, 0.7);
     font-size: 16px;
+    /* text-transform: none; */
 }
 
 input:focus{
     outline: none;
-    border-color: var(--violet);
+    border-color: var(--violet) !important;
+}
+
+.correct{
+    border-color: green;
 }
 
 .error{
     font-family: Space-Grotesk;
     color: red;
     font-size: 13px;
+}
+
+.invisible{
+    display: none;
 }
 
 #expiration-month, #expiration-year {
@@ -368,7 +382,7 @@ input:focus{
     color: var(--dark-violet);
     letter-spacing: 4px;
     font-size: 25px;
-    font-weight: 500;
+    font-weight: 700;
     margin-bottom: 12px;
 }
 
@@ -376,6 +390,6 @@ input:focus{
     font-family: Space-Grotesk;
     color: var(--dark-grayish-violet);
     font-size: 17px;
-    font-weight: 500;
+    font-weight: 700;
     margin-bottom: 30px;
 }
