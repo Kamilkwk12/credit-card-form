@@ -183,6 +183,7 @@ input:focus{
     font-family: Space-Grotesk;
     color: red;
     font-size: 13px;
+    max-width: 150px;
 }
 
 .invisible{

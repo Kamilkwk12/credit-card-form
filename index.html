@@ -32,24 +32,24 @@
       <form id="form" action="complete.html" autocomplete="off">
         <div>
           <label for="cardholder-name">CARDHOLDER NAME</label><br/>
-          <input type="text" id="cardholder-name" placeholder="e.g. Jane Appleseed"/><br/>
+          <input type="text" id="cardholder-name" placeholder="e.g. Jane Appleseed" onkeydown="checkNumbers(event)"/><br/>
           <span id="error-name" class="error"></span>
         </div>
         <div>
           <label for="card-number">CARD NUMBER</label><br/>
-          <input type="text" id="card-number" placeholder="e.g. 1234567891234000" maxlength="16" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/><br/>
+          <input type="text" id="card-number" placeholder="e.g. 1234567891234000" maxlength="16" onkeydown="checkLetters(event, 1)"/><br/>
           <span id="error-number" class="error"></span>
         </div>
         <div>
           <div style="float: left;">
             <label for="expiration-month">EXP. DATE (MM/YY)</label><br/>
-            <input type="text" id="expiration-month" placeholder="MM" maxlength="2" onkeypress="return event.keyCode >= 48 && event.keyCode <= 57"/>
-            <input type="text" id="expiration-year" placeholder="YY" maxlength="2" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/><br/>
+            <input type="text" id="expiration-month" placeholder="MM" maxlength="2" onkeydown="checkLetters(event, 2)"/>
+            <input type="text" id="expiration-year" placeholder="YY" maxlength="2" onkeydown="checkLetters(event, 3)"/><br/>
             <span id="error-exp" class="error"></span>
           </div>
           <div style="float: left;">
             <label for="cvv" style="margin-left:9px;">CVV</label><br/>
-            <input type="text" id="cvv" placeholder="e.g. 123" maxlength="3" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/><br/>
+            <input type="text" id="cvv" placeholder="e.g. 123" maxlength="3" onkeydown="checkLetters(event , 4)"/><br/>
             <span id="error-cvv" class="error" style="margin-left: 8px;"></span>
           </div>
         </div>
